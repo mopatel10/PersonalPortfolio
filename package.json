@@ -1,9 +1,15 @@
 {
-  "name": "react-portfolio-template",
+  "name": "myPortfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yujisatojr.github.io/react-portfolio-template",
+  "homepage": "https://mopatel10.github.io/PersonalPortfolio",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    
+  }
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
