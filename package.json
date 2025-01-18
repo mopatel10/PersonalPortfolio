@@ -2,7 +2,7 @@
   "name": "myportfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mopatel10.github.io/PersonalPortfolio",
+  "homepage": "https://github.com/mopatel10/PersonalPortfolio",
   
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
