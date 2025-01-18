@@ -1,13 +1,9 @@
 {
-  "name": "myPortfolio",
+  "name": "myportfolio",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://mopatel10.github.io/PersonalPortfolio",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    
-  }
+  
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.4",
