@@ -47,19 +47,17 @@ function Navigation({parentToChild, modeChange}: any) {
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section)
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
+      console.error('Element with id "' + section + '" not found');
     }
   };
 
   const drawer = (
     <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon/>Menu</p>
+      <p className="mobile-menu-top"><ListIcon /> Menu</p>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -76,28 +74,59 @@ function Navigation({parentToChild, modeChange}: any) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
-        <Toolbar className='navigation-bar'>
+      <AppBar
+        component="nav"
+        id="navigation"
+        position="fixed"
+        sx={{
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1100,
+          backgroundColor: mode === 'dark' ? '#333' : '#fff',
+          boxShadow: scrolled ? '0px 4px 10px rgba(0, 0, 0, 0.3)' : 'none',
+          height: '70px', // Make the navbar smaller
+        }}
+      >
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',  // Center the content horizontally
+            alignItems: 'center',      // Center the content vertically
+            padding: '0 20px',         // Add padding for the left and right
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ display: { sm: 'none' }, position: 'absolute', left: 10 }} // Position the icon on the left for mobile
           >
             <MenuIcon />
           </IconButton>
-          {mode === 'dark' ? (
-            <LightModeIcon onClick={() => modeChange()}/>
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()}/>
-          )}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
-                {item[0]}
-              </Button>
-            ))}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {mode === 'dark' ? (
+              <LightModeIcon onClick={() => modeChange()} sx={{ cursor: 'pointer', marginRight: '10px' }} />
+            ) : (
+              <DarkModeIcon onClick={() => modeChange()} sx={{ cursor: 'pointer', marginRight: '10px' }} />
+            )}
+            <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+
+              {navItems.map((item) => (
+                <Button
+                  key={item[0]}
+                  onClick={() => scrollToSection(item[1])}
+                  sx={{
+                    color: '#fff',
+                    fontSize: '14px',  // Make the text smaller
+                    marginLeft: '20px', // Space out the buttons
+                  }}
+                >
+                  {item[0]}
+                </Button>
+              ))}
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
@@ -107,7 +136,7 @@ function Navigation({parentToChild, modeChange}: any) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
