@@ -27,42 +27,10 @@ Welcome to my personal portfolio! This project showcases my skills, projects, an
 
 ## Technologies Used
 This portfolio is built with:  
-- **Frontend**: HTML, CSS, JavaScript  
-- **Frameworks/Libraries**: Bootstrap  
+- **Frontend**: HTML, CSS, JavaScript, TypeScript  
+- **Frameworks/Libraries**: Bootstrap, ReactS 
 - **Backend**: Node.js  
-- **Others**: Git, Netlify for hosting  
-
----
-
-## Structure
-```
-root
-│
-├── src/
-│   ├── assets/
-│   │   ├── images/
-│   │   ├── styles/
-│   │   └── scripts/
-│   ├── components/
-│   └── pages/
-├── public/
-│   └── index.html
-└── README.md
-```
-
----
-
-## How to Use
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/mohammed-patel/personal-portfolio.git
-   ```
-2. Navigate to the project directory:  
-   ```bash
-   cd personal-portfolio
-   ```
-3. Open `index.html` in your browser to view the portfolio.  
-4. Optional: Use `npm start` (or equivalent command) for live development, if applicable.  
+- **Others**: Git, Git pages for hosting  
 
 ---
 
