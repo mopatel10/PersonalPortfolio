@@ -7,7 +7,7 @@ import pf from '../assets/images/pf.jpg';
 function Main() {
 
   return (
-    <div className="container">
+    <div className="">
       <div className="about-section">
         <div className="image-wrapper">
           <img src={pf} alt="Avatar" />

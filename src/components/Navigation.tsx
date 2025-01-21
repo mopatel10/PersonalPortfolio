@@ -75,19 +75,23 @@ function Navigation({parentToChild, modeChange}: any) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
-        component="nav"
-        id="navigation"
-        position="fixed"
-        sx={{
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 1100,
-          backgroundColor: mode === 'dark' ? '#333' : '#fff',
-          boxShadow: scrolled ? '0px 4px 10px rgba(0, 0, 0, 0.3)' : 'none',
-          height: '70px', // Make the navbar smaller
-        }}
-      >
+  component="nav"
+  id="navigation"
+  position="fixed"
+  sx={{
+    top: 0,
+    zIndex: 1100,
+    backgroundColor: mode === 'dark' ? '#333' : '#fff',
+    boxShadow: scrolled ? '0px 4px 10px rgba(0, 0, 0, 0.3)' : 'none',
+    height: '70px',
+    borderRadius: '50px',
+    width: '500px',
+    justifyContent: 'center',
+    left: 0,
+    right: 0,
+    margin: 'auto', // Center horizontally
+  }}
+>
         <Toolbar
           sx={{
             display: 'flex',
