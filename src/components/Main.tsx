@@ -18,7 +18,7 @@ function Main() {
             <a href="https://www.linkedin.com/in/mohammed-patel-0303ba19a/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
           <h1>
-  <span className="white-letter">M</span>ohammed Patel
+ Mohammed Patel
 </h1>
 
           <p ><span className="white-letter">Full Stack Engineer </span></p>
